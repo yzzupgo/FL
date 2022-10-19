@@ -1,12 +1,10 @@
-# CFTA
-
 ## Complex Fault Type Analysis
 
 Here we describe the analysis of complex fault types in more detail.
 
 ### 1. Multiple Unrelated Faults on Multiple Lines
 
-![image](https://github.com/yzzupgo/lunwen/blob/main/img/Table%20I.png)
+![image](https://github.com/yzzupgo/FL/blob/main/CFTA/img/Table%20I.png)
 
 It represents that simple faults which are independent and unrelated are spread over multiple lines of a program. In such a case, failures that are observed by different test cases may be produced by different faults.
 
@@ -16,7 +14,7 @@ For such type of complex fault, developers may be used to use all test cases to 
 
 ### 2. Multiple Related Faults on Multiple Lines
 
-![image](https://github.com/yzzupgo/lunwen/blob/main/img/Table%20II.png)
+![image](https://github.com/yzzupgo/FL/blob/main/CFTA/img/Table%20II.png)
 
 It represents that simple faults which are related are spread over non-contiguous statements of a program. Note that, the statements may distribute in different functions and different classes of C++ and Java.
 
@@ -26,7 +24,7 @@ For such type of complex fault, developers can completely fix it only when they 
 
 ### 3. Multiple Related Faults on A Single Line
 
-![image](https://github.com/yzzupgo/lunwen/blob/main/img/Table%20III.png)
+![image](https://github.com/yzzupgo/FL/blob/main/CFTA/img/Table%20III.png)
 
 It represents that there are multiple faults on a single line with a certain fault relevance.
 
