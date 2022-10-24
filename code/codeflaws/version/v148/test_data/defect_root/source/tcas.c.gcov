@@ -1,0 +1,43 @@
+        -:    0:Source:/home/cyxy/files/access/cdata/version/v148/test_data/defect_root/source/tcas.c
+        -:    0:Graph:/home/cyxy/files/access/cdata/version/v148/test_data/defect_root/source/tcas.gcno
+        -:    0:Data:/home/cyxy/files/access/cdata/version/v148/test_data/defect_root/source/tcas.gcda
+        -:    0:Runs:7
+        -:    1:#include<math.h>
+        -:    2:#include<time.h>
+        -:    3:#include<stdio.h>
+        -:    4:#include<string.h>
+        -:    5:#include<stdlib.h>
+        -:    6:#define oo 2100000000
+        -:    7:#define pi 3.14159265359
+        -:    8:#define zero(a) (abb(a)<=1e-7)
+        -:    9:#define lowbit(a) ((a)&(-(a)))
+        -:   10:#define min(a,b) ((a)<(b)?(a):(b))
+        -:   11:#define max(a,b) ((a)>(b)?(a):(b))
+        -:   12:#define abb(a) ((a)>0?(a):(-(a)))
+        -:   13:#define cj(x1,y1,x2,y2) ((x1)*(y2)-(x2)*(y2))
+        -:   14:#define dj(x1,y1,x2,y2) ((x1)*(y1)+(y1)*(y2))
+        -:   15:#define dis(x1,y1,x2,y2) sqrt(((x2)-(x1))*((x2)-(x1))+((y2)-(y1))*((y2)-(y1)))
+        -:   16:
+        -:   17:long a[100002]={0},f[100002]={0};
+        -:   18:
+        7:   19:int main(int argc, char *argv[])
+        -:   20:{
+        7:   21:   long i,n,s=0,sum=0,ans=0;
+        7:   22:   scanf("%ld",&n);
+       58:   23:   for (i=1;i<=n;i++)
+        -:   24:   {
+       51:   25:      scanf("%ld",&a[i]);
+       51:   26:      sum+=a[i];
+        -:   27:   }
+       58:   28:   for (i=n;i>=1;i--)
+       51:   29:      f[i]=f[i+1]-a[i];
+       58:   30:   for (i=n;i>=1;i--)
+       51:   31:      f[i]=max(f[i],f[i+1]);
+       65:   32:   for (i=1;i<=n+1;i++)
+        -:   33:   {
+       58:   34:      ans=max(ans,s+f[i]);
+       58:   35:      s-=a[i];
+        -:   36:   }
+        7:   37:   printf("%ld\n",sum+2*ans);
+        7:   38:   return 0;
+        -:   39:}

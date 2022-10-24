@@ -1,0 +1,66 @@
+        -:    0:Source:/home/cyxy/files/access/cdata/version/v305/test_data/defect_root/source/tcas.c
+        -:    0:Graph:/home/cyxy/files/access/cdata/version/v305/test_data/defect_root/source/tcas.gcno
+        -:    0:Data:/home/cyxy/files/access/cdata/version/v305/test_data/defect_root/source/tcas.gcda
+        -:    0:Runs:5
+        -:    1:#include <stdio.h>
+        5:    2:int main(int argc, char *argv[])
+        -:    3:{
+        5:    4:    int x=0,y=0,i,p=0,j,g=0,f=0,h=0,k=0,finalB=0,finalW=0;
+        -:    5:    char str[100][100];
+       45:    6:    for(i=0;i<8;i++){
+       40:    7:        scanf("%s",str[i]);
+        -:    8:    }
+       45:    9:    for(i=0;i<8;i++){
+      360:   10:        for(j=0;j<8;j++){
+      320:   11:            if(str[j][i]=='B'){
+      143:   12:                x=j+1;
+      143:   13:                if(p==0){
+       35:   14:                    h=x;
+        -:   15:                }
+      143:   16:                p++;
+        -:   17:            }
+      320:   18:            if(str[j][i]=='W'){
+       83:   19:                y=j+1;
+       83:   20:                if(f==0){
+       37:   21:                    g=9-y;
+        -:   22:                }
+       83:   23:                f++;
+        -:   24:            }
+        -:   25:        }
+        -:   26:      //printf("%d %d %d\n",x,y,g);
+       40:   27:        if(x>y||x==0||y==0){
+       10:   28:            if(x>=finalB){
+        7:   29:                finalB=x;
+        -:   30:            }
+       10:   31:            if(h==0){
+        5:   32:                if(g>=finalW){
+        5:   33:                    finalW=g;
+        -:   34:                }
+        -:   35:            }
+       10:   36:            if(h!=0){
+        5:   37:                if(g>=finalW&&g>(9-h)){
+    #####:   38:                    finalW=g;
+        -:   39:                }
+        -:   40:            }
+        -:   41:        }
+       30:   42:        else if(x<y){
+      30*:   43:            if(g>(9-h)&&g>=finalW){
+    #####:   44:                finalW=g;
+        -:   45:            }
+        -:   46:        }
+       40:   47:        p=0;
+       40:   48:        f=0;
+       40:   49:        x=0;
+       40:   50:        y=0;
+       40:   51:        g=0;
+       40:   52:        h=0;
+        -:   53:    }
+        5:   54:    if(finalW>=finalB){
+    #####:   55:        printf("A");
+        -:   56:    }
+        -:   57:    else{
+        5:   58:        printf("B");
+        -:   59:    }
+        -:   60:    //printf("\n%d %d",finalB,finalW);
+        5:   61:    return 0;
+        -:   62:}

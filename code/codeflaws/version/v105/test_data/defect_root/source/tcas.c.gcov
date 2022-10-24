@@ -1,0 +1,48 @@
+        -:    0:Source:/home/cyxy/files/access/cdata/version/v105/test_data/defect_root/source/tcas.c
+        -:    0:Graph:/home/cyxy/files/access/cdata/version/v105/test_data/defect_root/source/tcas.gcno
+        -:    0:Data:/home/cyxy/files/access/cdata/version/v105/test_data/defect_root/source/tcas.gcda
+        -:    0:Runs:9
+        -:    1:#include <stdio.h>
+        -:    2:#include <string.h>
+        -:    3:
+        -:    4:int t[1000005];
+        -:    5:char str[1000005];
+        -:    6:
+        9:    7:int main(int argc, char *argv[]){
+       18:    8:	while (~scanf("%s", str)) {
+        9:    9:		int len = strlen(str), cnt = 0, i, pos=0;
+      436:   10:		for (i=0; i<len; i++) {
+      427:   11:			if (str[i] == 'F') {
+      216:   12:				cnt++;
+      216:   13:				t[cnt] = (i+1) - cnt;
+      216:   14:				if (cnt == 2) {
+        9:   15:					pos = i;
+        -:   16:				}
+        -:   17:			}
+        -:   18:		}
+        9:   19:		if (cnt ==0 ) {
+    #####:   20:			puts("0"); continue;
+        -:   21:		}
+        9:   22:		else if (cnt == 1) {
+    #####:   23:			printf("%d\n", t[1]); continue;
+        -:   24:		}
+        9:   25:		int cur = 2;
+      395:   26:		for (i=pos; i<len; i++) {
+      386:   27:			if (str[i] == 'M') {
+      179:   28:				continue;
+        -:   29:			}
+      207:   30:			if (t[cur] == 0) {
+        2:   31:				cur++;
+        2:   32:				continue;
+        -:   33:			}
+      205:   34:			if (t[cur] <= t[cur-1]) {
+      171:   35:				t[cur] = t[cur-1]+1;
+        -:   36:			}
+      205:   37:			cur++;
+        -:   38:		}
+        -:   39:
+        9:   40:		printf("%d\n", t[cnt]);
+        -:   41:	}
+        -:   42:
+        9:   43:	return 0;
+        -:   44:}

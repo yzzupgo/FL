@@ -1,0 +1,49 @@
+        -:    0:Source:/home/cyxy/files/access/cdata/version/v392/test_data/defect_root/source/tcas.c
+        -:    0:Graph:/home/cyxy/files/access/cdata/version/v392/test_data/defect_root/source/tcas.gcno
+        -:    0:Data:/home/cyxy/files/access/cdata/version/v392/test_data/defect_root/source/tcas.gcda
+        -:    0:Runs:5
+        -:    1:#include<stdio.h>
+        5:    2:int main(int argc, char *argv[])
+        -:    3:{
+        5:    4:    int t,i,j,m,a[150][150],counter1,counter2,mini=9999,minii;
+        5:    5:    scanf("%d",&t);
+        -:    6:    //scannig of test cases
+      121:    7:    for(i=0;i<t;i++)
+        -:    8:    {
+      580:    9:        for(j=0;j<4;j++)
+        -:   10:        {
+      464:   11:            scanf("%d",&a[i][j]);
+        -:   12:        }
+        -:   13:    }
+        -:   14:    // comparing and printing
+      116:   15:    for(i=0;i<t-1;i++)
+        -:   16:    {
+     5109:   17:        for(m=(i+1);m<t;m++)
+        -:   18:        {
+     4998:   19:            counter1=0;
+     4998:   20:            counter2=0;
+    19992:   21:            for(j=0;j<3;j++)
+        -:   22:            {
+    14994:   23:                if(a[i][j] > a[m][j])
+     3525:   24:                    counter1++;
+    11469:   25:                else if (a[i][j] < a[m][j]){
+       53:   26:                    counter2++;
+        -:   27:                }
+        -:   28:            }
+     4998:   29:            if(counter1 == 3)
+     1140:   30:                a[m][3]=999999999;
+     4998:   31:            if(counter2 == 3)
+       12:   32:                a[i][3]=999999999;
+        -:   33:        }
+        -:   34:    }
+      121:   35:    for(i=0;i<t;i++)
+        -:   36:    {
+      116:   37:        if(a[i][3] < mini)
+        -:   38:        {
+       10:   39:            mini = a[i][3];
+       10:   40:            minii = i+1;
+        -:   41:        }
+        -:   42:    }
+        5:   43:    printf("%d",minii);
+        5:   44:return 0;
+        -:   45:}

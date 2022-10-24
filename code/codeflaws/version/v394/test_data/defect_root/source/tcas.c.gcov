@@ -1,0 +1,43 @@
+        -:    0:Source:/home/cyxy/files/access/cdata/version/v394/test_data/defect_root/source/tcas.c
+        -:    0:Graph:/home/cyxy/files/access/cdata/version/v394/test_data/defect_root/source/tcas.gcno
+        -:    0:Data:/home/cyxy/files/access/cdata/version/v394/test_data/defect_root/source/tcas.gcda
+        -:    0:Runs:2
+        -:    1:#include<stdio.h>
+        -:    2:#include<math.h>
+        2:    3:int main(int argc, char *argv[])
+        -:    4:{
+        2:    5:	int a[10],i,j=0,c=0,b[6];
+       22:    6:	for(i=0;i<10;i++)
+        -:    7:	{
+       20:    8:		a[i]=0;
+        -:    9:	}
+       14:   10:	for(i=0;i<6;i++)
+        -:   11:	{
+       12:   12:		scanf("%d",&b[i]);
+       12:   13:		a[b[i]]++;
+        -:   14:	}
+       22:   15:	for(i=0;i<10;i++)
+        -:   16:	{
+       20:   17:		if(a[i]>=4)
+        -:   18:		{
+    #####:   19:			c++;
+        -:   20:		}     
+       20:   21:		if(a[i]==1)
+        -:   22:		{
+    #####:   23:			j++;
+        -:   24:		}
+        -:   25:	}
+       2*:   26:	if(((c==1)&&(j==0))||((c==2)&&(j==0)))
+        -:   27:	{
+    #####:   28:		printf("Elephant\n");
+        -:   29:	}
+       2*:   30:	else if(((c==1)&&(j==1))||((c==1)&&(j==2)))
+        -:   31:	{
+    #####:   32:		printf("Bear\n");
+        -:   33:	}
+        -:   34:	else
+        -:   35:	{
+        2:   36:		printf("Alien\n");
+        -:   37:	}
+        2:   38:	return 0;
+        -:   39:}

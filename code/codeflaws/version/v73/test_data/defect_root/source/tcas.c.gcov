@@ -1,0 +1,19 @@
+        -:    0:Source:/home/cyxy/files/access/cdata/version/v73/test_data/defect_root/source/tcas.c
+        -:    0:Graph:/home/cyxy/files/access/cdata/version/v73/test_data/defect_root/source/tcas.gcno
+        -:    0:Data:/home/cyxy/files/access/cdata/version/v73/test_data/defect_root/source/tcas.gcda
+        -:    0:Runs:13
+        -:    1:#include <stdio.h>
+        -:    2:#include <math.h>
+        -:    3:
+       13:    4:int main(int argc, char *argv[])
+        -:    5:{
+        -:    6:    double n, x, y , temp;
+       13:    7:    scanf("%lf %lf %lf", &n, &x, &y);
+        -:    8:
+       13:    9:    temp =ceil( n * (y/100));
+       13:   10:    double ans = temp - x;
+        -:   11:
+       13:   12:    if(ans < 0) printf("0");
+    #####:   13:    else printf("%d", (int)ans);
+       13:   14:    return 0;
+        -:   15:}

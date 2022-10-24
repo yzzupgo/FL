@@ -1,0 +1,23 @@
+        -:    0:Source:/home/cyxy/files/access/cdata/version/v66/test_data/defect_root/source/tcas.c
+        -:    0:Graph:/home/cyxy/files/access/cdata/version/v66/test_data/defect_root/source/tcas.gcno
+        -:    0:Data:/home/cyxy/files/access/cdata/version/v66/test_data/defect_root/source/tcas.gcda
+        -:    0:Runs:10
+        -:    1:#include <stdio.h>
+        -:    2:
+        -:    3:long long int n, us = 9, cvp, i, x;
+        -:    4:
+       10:    5:int main(int argc, char *argv[]) {
+       10:    6:	scanf("%lld",&n);
+       92:    7:	for(i = 1 ; i < 15 ; i++, us *= 10){
+       92:    8:		if(n > us){
+       82:    9:			cvp += (us)*i;
+       82:   10:			n -= us;
+        -:   11:		}
+        -:   12:		else{
+       10:   13:			cvp += (n)*i;
+       10:   14:			break;
+        -:   15:		}
+        -:   16:	}
+       10:   17:	printf("%lld",cvp);
+       10:   18:	return 0;
+        -:   19:}

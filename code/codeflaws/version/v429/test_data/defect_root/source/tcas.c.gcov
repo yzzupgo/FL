@@ -1,0 +1,57 @@
+        -:    0:Source:/home/cyxy/files/access/cdata/version/v429/test_data/defect_root/source/tcas.c
+        -:    0:Graph:/home/cyxy/files/access/cdata/version/v429/test_data/defect_root/source/tcas.gcno
+        -:    0:Data:/home/cyxy/files/access/cdata/version/v429/test_data/defect_root/source/tcas.gcda
+        -:    0:Runs:4
+        -:    1:#include<stdio.h>
+        4:    2:int main(int argc, char *argv[])
+        -:    3:   {
+        4:    4:       long long int a,b,n ,counter=5;
+        4:    5:       scanf("%lld" , &n);
+        -:    6:
+        4:    7:        if(n<4)
+        -:    8:        {
+    #####:    9:            printf("NO\n");
+        -:   10:        }
+       4*:   11:       else if(n%7==0 || n%4==0||n%47==0|| n%744==0||n%74==0)
+        -:   12:       {
+        4:   13:           printf("YES\n");
+        -:   14:       }
+        -:   15:       else
+        -:   16:       {
+    #####:   17:           while(n>7)
+        -:   18:           {
+    #####:   19:               a = n%10;
+    #####:   20:               b = n/10;
+    #####:   21:               if(a!=4 &&  a!=7)
+        -:   22:               {
+    #####:   23:                   counter=0;
+    #####:   24:                   break;
+        -:   25:               }
+        -:   26:               else
+        -:   27:               {
+    #####:   28:                   n =b;
+    #####:   29:                   b=0;
+    #####:   30:                   a=0;
+    #####:   31:                   if(n<10)
+        -:   32:                   {
+    #####:   33:                       if(n!=4 && n!=7)
+        -:   34:                       {
+    #####:   35:                           counter=0;
+    #####:   36:                           break;
+        -:   37:
+        -:   38:                       }
+        -:   39:                   }
+        -:   40:
+        -:   41:               }
+        -:   42:           }
+    #####:   43:           if(counter==0)
+        -:   44:           {
+    #####:   45:               printf("NO\n");
+        -:   46:           }
+        -:   47:           else
+        -:   48:           {
+    #####:   49:               printf("YES\n");
+        -:   50:           }
+        -:   51:       }
+        4:   52:       return 0;
+        -:   53:         }

@@ -1,0 +1,59 @@
+        -:    0:Source:/home/cyxy/files/access/cdata/version/v292/test_data/defect_root/source/tcas.c
+        -:    0:Graph:/home/cyxy/files/access/cdata/version/v292/test_data/defect_root/source/tcas.gcno
+        -:    0:Data:/home/cyxy/files/access/cdata/version/v292/test_data/defect_root/source/tcas.gcda
+        -:    0:Runs:5
+        -:    1:#include <stdio.h>
+        -:    2:#include <string.h>
+        -:    3:#define lowbit(a) ((a)&(-(a)))
+        -:    4:
+        -:    5:int rec[17],pos[17],ans[17],v[65537];
+        -:    6:long long f[65537];
+        -:    7:int n;
+        -:    8:
+      133:    9:long long work(int s)
+        -:   10:{
+        -:   11:   int i,j;
+      133:   12:   memset(f,0,sizeof(f));
+      133:   13:   memset(pos,0,sizeof(pos));
+      780:   14:   for (i=1;i<=s;i++)
+      647:   15:      pos[ans[i]]=i;
+      133:   16:   f[0]=1;
+   873728:   17:   for (i=0;i<(1<<n)-1;i++)
+   873595:   18:      if (f[i])
+    32357:   19:         for (j=1;j<=n;j++)
+    29810:   20:            if (!(i&(1<<j-1))&&(!pos[v[i]+1]||pos[v[i]+1]==j)&&(i&rec[j])==rec[j])
+     4718:   21:               f[i+(1<<j-1)]+=f[i];
+      133:   22:   return f[(1<<n)-1];
+        -:   23:}
+        -:   24:
+        5:   25:int main(int argc, char *argv[])
+        -:   26:{
+        5:   27:   int i,j,a,b,m,s=0;
+        -:   28:   long long k,t;
+        5:   29:   scanf("%d%lld%d",&n,&k,&m);
+    18688:   30:   for (i=1;i<1<<n;i++)
+    18683:   31:      v[i]=v[i-lowbit(i)]+1;
+       75:   32:   for (i=1;i<=m;i++)
+        -:   33:   {
+       70:   34:      scanf("%d%d",&a,&b);
+       70:   35:      rec[b]|=(1<<a-1);
+        -:   36:   }
+        5:   37:   if (work(0)<k-2000)
+    #####:   38:      puts("The times have changed");
+        -:   39:   else
+       53:   40:      for (i=1;i<=n;i++)
+      271:   41:         for (j=1;j<=n;j++)
+      271:   42:            if (!(s&(1<<j-1)))
+        -:   43:            {
+      128:   44:               ans[i]=j;
+      128:   45:               t=work(i);
+      128:   46:               if (t>=k-2000)
+        -:   47:               {
+       48:   48:                  s+=(1<<j-1);
+       48:   49:                  printf("%d%c",j,(i==n)?'\n':' ');
+       48:   50:                  break;
+        -:   51:               }
+       80:   52:               k-=t;
+        -:   53:            }
+        5:   54:   return 0;
+        -:   55:}

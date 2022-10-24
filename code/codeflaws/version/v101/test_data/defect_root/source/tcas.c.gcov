@@ -1,0 +1,28 @@
+        -:    0:Source:E:/Prgorams/Python/access/cdata/version/v101/test_data/defect_root/source/tcas.c
+        -:    0:Graph:tcas.gcno
+        -:    0:Data:tcas.gcda
+        -:    0:Runs:7
+        -:    1:#include <stdio.h>
+        -:    2:
+        -:    3:
+      102:    4:int ok(long long n){
+      102:    5:    if (n < 0) n = -n;
+      190:    6:    while (n > 0){
+       95:    7:        if (n % 10 == 8) return 1;
+       88:    8:        n = n / 10;
+        -:    9:    }
+       95:   10:    return 0;
+        -:   11:}
+        -:   12:
+        -:   13:
+        -:   14:
+        7:   15:int main(int argc, char *argv[]){
+        -:   16:    long long n;
+        -:   17:    int i;
+        7:   18:    scanf("%lld", &n);
+      102:   19:    for (i = 1; i <= 100; i++){
+      102:   20:        n += 1;
+      102:   21:        if (ok(n)){ printf("%d", i); break;}
+        -:   22:    }
+        7:   23:    return 0;
+        -:   24:}
