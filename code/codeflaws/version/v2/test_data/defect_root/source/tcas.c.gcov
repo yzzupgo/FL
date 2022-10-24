@@ -1,0 +1,37 @@
+        -:    0:Source:E:/Prgorams/Python/access/cdata/version/v2/test_data/defect_root/source/tcas.c
+        -:    0:Graph:tcas.gcno
+        -:    0:Data:tcas.gcda
+        -:    0:Runs:6
+        -:    1:#include<stdio.h>
+        -:    2:#include<math.h>
+        -:    3:
+        6:    4:int main(int argc, char *argv[])
+        -:    5:{
+        6:    6:	long long int k,l,i=1,res=1;
+        -:    7:
+        6:    8:	scanf("%lld%lld",&k,&l);
+        -:    9:
+        -:   10:
+        -:   11:
+        -:   12:	while(1)
+        -:   13:	{
+       18:   14:		res=res*k;
+       18:   15:		i++;
+        -:   16:
+       18:   17:		if(l%res!=0)
+        -:   18:		{
+    #####:   19:			printf("NO");
+    #####:   20:			goto label;
+        -:   21:		}
+        -:   22:
+       18:   23:		if(l%res==0&&l/res==1)
+        6:   24:		break;
+        -:   25:	}
+        -:   26:
+        6:   27:	printf("YES\n");
+        6:   28:	printf("%lld",i-2);
+        -:   29:
+        6:   30:	label:
+        -:   31:
+        6:   32:	return 0;
+        -:   33:}

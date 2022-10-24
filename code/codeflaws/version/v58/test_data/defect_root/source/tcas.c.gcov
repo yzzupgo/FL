@@ -1,0 +1,27 @@
+        -:    0:Source:/home/cyxy/files/access/cdata/version/v58/test_data/defect_root/source/tcas.c
+        -:    0:Graph:/home/cyxy/files/access/cdata/version/v58/test_data/defect_root/source/tcas.gcno
+        -:    0:Data:/home/cyxy/files/access/cdata/version/v58/test_data/defect_root/source/tcas.gcda
+        -:    0:Runs:13
+        -:    1:#include <string.h>
+        -:    2:#include <stdio.h>
+        -:    3:
+        -:    4:char string[100];
+        -:    5:
+       13:    6:int main(int argc, char *argv[]) {
+       13:    7:	int i, flag = 0;
+        -:    8:
+       13:    9:	scanf("%s", string);
+        -:   10:	
+      172:   11:	for (i = 0; i < strlen(string); i++) {
+      159:   12:		if (string[i] == 'H' || string[i] == 'Q' || 
+      159:   13:			string[i] == '9') {	
+    #####:   14:			flag = 1;
+    #####:   15:			break;
+        -:   16:		}
+        -:   17:	}
+        -:   18:
+      13*:   19:	if (flag) printf("YES\n");
+       13:   20:	else 	  printf("NO\n");
+        -:   21:
+       13:   22:	return 0;
+        -:   23:}

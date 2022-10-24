@@ -1,0 +1,72 @@
+        -:    0:Source:E:/Prgorams/Python/access/cdata/version/v10/test_data/defect_root/source/tcas.c
+        -:    0:Graph:tcas.gcno
+        -:    0:Data:tcas.gcda
+        -:    0:Runs:47
+        -:    1:#include <stdio.h>
+        -:    2:
+       47:    3:int main(int argc, char *argv[]){
+        -:    4:       int n,i,j,k,ar[200],min,count,f,idx,j1;
+        -:    5:       char c[200][200],ch;
+        -:    6:       
+       47:    7:       scanf("%d",&n);
+       47:    8:       scanf("%c",&ch);
+        -:    9:       
+     2170:   10:       for(i=0;i<n;i++){
+   202708:   11:             for(j=0;j<n;j++)
+   200585:   12:             scanf("%c",&c[i][j]);
+        -:   13:             
+     2123:   14:             scanf("%c",&ch);
+        -:   15:             
+        -:   16:       }       
+       47:   17:       f=0;
+      179:   18:       for(i=0;i<n;i++){
+      167:   19:       min=99999;
+      167:   20:       idx=-1;
+     3170:   21:             for(j=0;j<n;j++){
+     3135:   22:                   if(c[i][j]=='.'){
+        -:   23:                   
+      132:   24:                                ar[i]=j;
+      132:   25:                                idx=1;
+      132:   26:                                break;
+        -:   27:                   }  
+        -:   28:                       // printf("%d %d\n",i+1,idx+1);     
+        -:   29:             }
+      167:   30:             if(idx==-1)
+       35:   31:             break;      
+        -:   32:             
+        -:   33://             }          
+        -:   34:                   
+        -:   35:       }
+       47:   36:       if(i!=n){
+       35:   37:       f=1;
+      466:   38:       for(i=0;i<n;i++){
+      461:   39:       min=99999;
+      461:   40:       idx=-1;
+     2610:   41:             for(j=0;j<n;j++){
+     2580:   42:                   if(c[j][i]=='.'){
+      431:   43:                               ar[i]=j;
+      431:   44:                                idx=1;
+      431:   45:                                break;
+        -:   46:                   }
+        -:   47:                   
+        -:   48:             }            
+      461:   49:             if(idx==-1){
+       30:   50:             f=2;
+       30:   51:             break; 
+        -:   52:             
+        -:   53:             }
+        -:   54:       }
+        -:   55:       }
+       47:   56:       if(f==0)
+       71:   57:       for(i=0;i<n;i++){
+       59:   58:       printf("%d %d\n",i+1,ar[i]+1);                 
+        -:   59:       }
+       35:   60:       else if(f==1)
+       23:   61:       for(i=0;i<n;i++){
+       18:   62:       printf("%d %d\n",ar[i]+1,i+1);                 
+        -:   63:       }
+        -:   64:       else
+       30:   65:       printf("-1\n");
+        -:   66://getch();
+       47:   67:return 0;       
+        -:   68:}

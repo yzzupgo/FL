@@ -1,0 +1,30 @@
+        -:    0:Source:/home/cyxy/files/access/cdata/version/v240/test_data/defect_root/source/tcas.c
+        -:    0:Graph:/home/cyxy/files/access/cdata/version/v240/test_data/defect_root/source/tcas.gcno
+        -:    0:Data:/home/cyxy/files/access/cdata/version/v240/test_data/defect_root/source/tcas.gcda
+        -:    0:Runs:2
+        -:    1:#include <stdio.h>
+        -:    2:
+        -:    3:const int inf = 0x3f3f3f3f;
+        -:    4:
+        2:    5:int main(int argc, char *argv[]){
+        -:    6:
+        2:    7:    int i, max, num, n, ar[1010] = {0};
+        -:    8:
+        2:    9:    max = -inf;
+        -:   10:
+        2:   11:    scanf("%d", &n);
+        -:   12:
+        4:   13:    for(i=0;i<n;i++){
+        2:   14:        scanf("%d", &num);
+        2:   15:        ar[num]++;
+        -:   16:    }
+        -:   17:
+     2004:   18:    for(i=0;i<=1000;i++){
+     2002:   19:        if(ar[i] > max )
+        4:   20:            max = ar[i];
+        -:   21:    }
+        -:   22:
+        2:   23:    printf("%d\n", n-max);
+        -:   24:
+        2:   25:    return 0;
+        -:   26:}

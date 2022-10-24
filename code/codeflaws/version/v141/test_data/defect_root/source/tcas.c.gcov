@@ -1,0 +1,57 @@
+        -:    0:Source:/home/cyxy/files/access/cdata/version/v141/test_data/defect_root/source/tcas.c
+        -:    0:Graph:/home/cyxy/files/access/cdata/version/v141/test_data/defect_root/source/tcas.gcno
+        -:    0:Data:/home/cyxy/files/access/cdata/version/v141/test_data/defect_root/source/tcas.gcda
+        -:    0:Runs:2
+        -:    1:#include<stdio.h>
+        -:    2:#include<stdlib.h>
+        2:    3:int main(int argc, char *argv[]){
+        -:    4:    int a1,a2,a3;
+        -:    5:    int b1,b2,b3;
+        -:    6:    int i;
+        2:    7:    scanf("%d %d",&a1,&b1);
+        2:    8:    scanf("%d %d",&a2,&b2);
+        2:    9:    scanf("%d %d",&a3,&b3);
+        -:   10:
+        2:   11:    if(a1>b1){
+        2:   12:        i=b1;
+        2:   13:        b1=a1;
+        2:   14:        a1=i;
+        -:   15:    }
+        2:   16:    if(a2>b2){
+        2:   17:        i=a2;
+        2:   18:        a2=b2;
+        2:   19:        b2=i;
+        -:   20:    }
+        2:   21:    if(a3>b3){
+        2:   22:       i=a3;
+        2:   23:       a3=b3;
+        2:   24:       b3=i;
+        -:   25:       }
+        2:   26:    if(b2>b3){
+    #####:   27:        i=a2;
+    #####:   28:        a2=a3;
+    #####:   29:        a3=i;
+    #####:   30:        i=b2;
+    #####:   31:        b2=b3;
+    #####:   32:        b3=i;
+        -:   33:    }
+        2:   34:    if(a2*b2+a3*b3>a1*b1)
+    #####:   35:        printf("NO");
+        -:   36:    else{
+        2:   37:        if(b2>b1||b3>b1)
+    #####:   38:            printf("NO");
+        2:   39:        else if(a2>a1||a3>a1)
+    #####:   40:            printf("NO");
+        2:   41:        else if(b2+b3<=b1||a2+a3<=a1)
+    #####:   42:            printf("YES");
+        2:   43:        else if(b3+a2<=b1)
+    #####:   44:            printf("YES");
+        2:   45:        else if(a2+a3<=b1&&b3<=a1)
+    #####:   46:            printf("YES");
+        -:   47:        else
+        2:   48:            printf("NO");
+        -:   49:
+        -:   50:    }
+        -:   51:
+        2:   52:return 0;
+        -:   53:}

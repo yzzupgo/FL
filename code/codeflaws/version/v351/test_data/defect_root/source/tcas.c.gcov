@@ -1,0 +1,74 @@
+        -:    0:Source:/home/cyxy/files/access/cdata/version/v351/test_data/defect_root/source/tcas.c
+        -:    0:Graph:/home/cyxy/files/access/cdata/version/v351/test_data/defect_root/source/tcas.gcno
+        -:    0:Data:/home/cyxy/files/access/cdata/version/v351/test_data/defect_root/source/tcas.gcda
+        -:    0:Runs:14
+        -:    1://      Burglar and Matches.c
+        -:    2://      
+        -:    3://      Copyright 2012 Administrator <cpy@ubuntu>
+        -:    4://      
+        -:    5://      This program is free software; you can redistribute it and/or modify
+        -:    6://      it under the terms of the GNU General Public License as published by
+        -:    7://      the Free Software Foundation; either version 2 of the License, or
+        -:    8://      (at your option) any later version.
+        -:    9://      
+        -:   10://      This program is distributed in the hope that it will be useful,
+        -:   11://      but WITHOUT ANY WARRANTY; without even the implied warranty of
+        -:   12://      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+        -:   13://      GNU General Public License for more details.
+        -:   14://      
+        -:   15://      You should have received a copy of the GNU General Public License
+        -:   16://      along with this program; if not, write to the Free Software
+        -:   17://      Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+        -:   18://      MA 02110-1301, USA.
+        -:   19:
+        -:   20:
+        -:   21:#include <stdio.h>
+        -:   22:#include <stdlib.h>
+        -:   23:
+        -:   24:struct matchbox
+        -:   25:{
+        -:   26:    int a;
+        -:   27:    int b;
+        -:   28:} c[20];
+        -:   29:
+      205:   30:int cmp(const void *x, const void *y)
+        -:   31:{
+      205:   32:    struct matchbox *p = (struct matchbox *)x;
+      205:   33:    struct matchbox *q = (struct matchbox *)y;
+      205:   34:    return q->b - p->b;
+        -:   35:}
+        -:   36:
+       14:   37:void func(int n, int m)
+        -:   38:{
+       14:   39:    int ans = 0, i = 0;
+       14:   40:    qsort(c, m, sizeof(struct matchbox), cmp);
+      106:   41:    while (n > 0 && i < m)   // i < m, rather careless.
+        -:   42:    {
+       92:   43:        if (n >= c[i].a)
+        -:   44:        {
+       92:   45:            n -= c[i].a;
+       92:   46:            ans += c[i].a * c[i].b;
+        -:   47:        }
+        -:   48:        else
+        -:   49:        {
+    #####:   50:            ans += n * c[i].b;
+    #####:   51:            n = 0;
+        -:   52:        }
+       92:   53:        i ++;
+        -:   54:    }
+       14:   55:    printf("%d\n", ans);
+       14:   56:}
+        -:   57:
+       14:   58:int main(int argc, char **argv)
+        -:   59:{
+        -:   60:    int n, m, i;
+       28:   61:    while (scanf("%d%d", &n, &m) == 2)
+        -:   62:    {
+      106:   63:        for (i = 0; i < m; i ++)
+        -:   64:        {
+       92:   65:            scanf("%d%d", &c[i].a, &c[i].b);
+        -:   66:        }
+       14:   67:        func(n, m);
+        -:   68:    }
+       14:   69:    return 0;
+        -:   70:}

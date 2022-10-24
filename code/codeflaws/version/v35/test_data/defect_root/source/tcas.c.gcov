@@ -1,0 +1,27 @@
+        -:    0:Source:/home/cyxy/files/access/cdata/version/v35/test_data/defect_root/source/tcas.c
+        -:    0:Graph:/home/cyxy/files/access/cdata/version/v35/test_data/defect_root/source/tcas.gcno
+        -:    0:Data:/home/cyxy/files/access/cdata/version/v35/test_data/defect_root/source/tcas.gcda
+        -:    0:Runs:20
+        -:    1:#include <stdio.h>
+        -:    2:
+       20:    3:int main(int argc, char *argv[])
+        -:    4:{
+        -:    5:	char br[100001];
+       20:    6:	int digits[10]={0};
+        -:    7:	char s[100001];
+        -:    8:	int i,j;
+        -:    9:
+       20:   10:	scanf("%s",br);
+       20:   11:	scanf("%s",s);
+        -:   12:
+      136:   13:	for(i=0;s[i]!=0;++i) digits[s[i]-'0']++;
+        -:   14:
+        -:   15:
+     2477:   16:	for(i=0;br[i]!=0;++i)
+     9323:   17:		for(j=9;j>=0;--j){
+     9296:   18:			if(br[i]>=j+'0') break;
+     6897:   19:			if(digits[j]>0){ digits[j]--; br[i]=j+'0'; break; }
+        -:   20:		}
+       20:   21:	printf("%s",br);
+       20:   22:	return 0;
+        -:   23:}

@@ -1,0 +1,16 @@
+        -:    0:Source:/home/cyxy/files/access/cdata/version/v486/test_data/defect_root/source/tcas.c
+        -:    0:Graph:/home/cyxy/files/access/cdata/version/v486/test_data/defect_root/source/tcas.gcno
+        -:    0:Data:/home/cyxy/files/access/cdata/version/v486/test_data/defect_root/source/tcas.gcda
+        -:    0:Runs:6
+        -:    1:#include <stdio.h>
+        -:    2:
+        -:    3:int n;
+        -:    4:char s[55];
+        -:    5:long long res;
+        -:    6:
+        6:    7:int main(int argc, char *argv[]) { int i;
+        6:    8:    scanf("%d%s", &n, s);
+      304:    9:    for( i = 0; i < n; i++) if(s[i] == 'B') res |= 1ll << i;
+        6:   10:    printf("%lld\n", res);
+        6:   11:    return 0;
+        -:   12:}

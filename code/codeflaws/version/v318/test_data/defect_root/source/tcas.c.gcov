@@ -1,0 +1,39 @@
+        -:    0:Source:/home/cyxy/files/access/cdata/version/v318/test_data/defect_root/source/tcas.c
+        -:    0:Graph:/home/cyxy/files/access/cdata/version/v318/test_data/defect_root/source/tcas.gcno
+        -:    0:Data:/home/cyxy/files/access/cdata/version/v318/test_data/defect_root/source/tcas.gcda
+        -:    0:Runs:3
+        -:    1:#include<stdio.h>
+        3:    2:int main(int argc, char *argv[])
+        3:    3:{
+        -:    4:int i,j,k,n,max;
+        3:    5:scanf("%d",&n);
+        3:    6:int a[n],good[n];
+      111:    7:for(i=0;i<n;i++)
+      108:    8:scanf("%d",&a[i]);
+        3:    9:if(n>2)
+        3:   10:good[0]=2;
+        -:   11:else
+    #####:   12:good[0]=n;
+        3:   13:k=0;
+      105:   14:for(i=2;i<n;i++)
+        -:   15:{
+      102:   16:if(a[i]==a[i-1]+a[i-2])
+       99:   17:good[k]++;
+        -:   18:else
+        -:   19:{
+        3:   20:    good[k+1]=2;
+        3:   21:    k++;
+        -:   22:
+        -:   23:}
+        -:   24:
+        -:   25:}
+        9:   26:for(i=0;i<=k;i++)
+        -:   27:{
+        6:   28:if(i==0)
+        3:   29:max=good[0];
+        6:   30:if(good[i]>max)
+        3:   31:max=good[i];
+        -:   32:}
+        3:   33:printf("%d",max);
+        3:   34:return 0;
+        -:   35:}

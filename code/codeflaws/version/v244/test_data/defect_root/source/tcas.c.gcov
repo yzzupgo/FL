@@ -1,0 +1,21 @@
+        -:    0:Source:/home/cyxy/files/access/cdata/version/v244/test_data/defect_root/source/tcas.c
+        -:    0:Graph:/home/cyxy/files/access/cdata/version/v244/test_data/defect_root/source/tcas.gcno
+        -:    0:Data:/home/cyxy/files/access/cdata/version/v244/test_data/defect_root/source/tcas.gcda
+        -:    0:Runs:5
+        -:    1:#include<stdio.h>
+        5:    2:int main(int argc, char *argv[])
+        -:    3:{
+        -:    4:    int a,b,s;
+        5:    5:    scanf("%d %d %d",&a,&b,&s);
+        5:    6:    if(a<0)
+        5:    7:        a=0-a;
+        5:    8:    if(b<0)
+        5:    9:        b=0-b;
+       5*:   10:        if(a+b<=s && (a+b)%2==0 && s%2==0)
+    #####:   11:            printf("Yes");
+       5*:   12:        else if(a+b<=s && (a+b)%2!=0 && s%2!=0)
+    #####:   13:            printf("Yes");
+        -:   14:        else
+        5:   15:            printf("No");
+        5:   16:return 0;
+        -:   17:}

@@ -1,0 +1,30 @@
+        -:    0:Source:E:/Prgorams/Python/access/cdata/version/v20/test_data/defect_root/source/tcas.c
+        -:    0:Graph:tcas.gcno
+        -:    0:Data:tcas.gcda
+        -:    0:Runs:12
+        -:    1:#include <stdio.h>
+        -:    2:
+       36:    3:int min(int a, int b) {
+       36:    4:	return a <= b ? a : b;
+        -:    5:}
+        -:    6:
+       12:    7:int main(int argc, char *argv[]) {
+        -:    8:	int p1; int p2; int p3; int p4; int a; int b;
+        -:    9:	
+       12:   10:	scanf("%d%d%d%d%d%d", &p1, &p2, &p3, &p4, &a, &b);
+        -:   11:	
+       12:   12:	int min_p = p1;
+       12:   13:	min_p = min(min_p, p2);
+       12:   14:	min_p = min(min_p, p3);
+       12:   15:	min_p = min(min_p, p4);
+        -:   16:	
+       12:   17:	int result = 0;
+       12:   18:	if (a < min_p) {
+       12:   19:		result = min_p - a;
+       12:   20:		if (b < min_p) result = b - a + 1;
+        -:   21:	}
+        -:   22:	
+       12:   23:	printf("%d\n", result);
+        -:   24:	
+       12:   25:	return 0;
+        -:   26:}

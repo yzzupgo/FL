@@ -1,0 +1,19 @@
+        -:    0:Source:/home/cyxy/files/access/cdata/version/v383/test_data/defect_root/source/tcas.c
+        -:    0:Graph:/home/cyxy/files/access/cdata/version/v383/test_data/defect_root/source/tcas.gcno
+        -:    0:Data:/home/cyxy/files/access/cdata/version/v383/test_data/defect_root/source/tcas.gcda
+        -:    0:Runs:2
+        -:    1:#include<stdio.h>
+        -:    2:int a,b,c,d,e;
+        2:    3:int main(int argc, char *argv[])
+        -:    4:{
+        2:    5:	scanf("%d%d%d%d%d",&a,&b,&c,&d,&e);
+        -:    6:	
+        2:    7:	if((a+b+c+d+e)%5==0&&(a+b+c+d+e)>=5)
+        -:    8:	{
+    #####:    9:		printf("%d",(a+b+c+d+e)/5);
+        -:   10:	}
+        -:   11:	else{
+        2:   12:		printf("-1");
+        -:   13:	}
+        2:   14:	return 0;
+        -:   15:}

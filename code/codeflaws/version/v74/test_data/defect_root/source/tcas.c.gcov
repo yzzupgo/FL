@@ -1,0 +1,21 @@
+        -:    0:Source:/home/cyxy/files/access/cdata/version/v74/test_data/defect_root/source/tcas.c
+        -:    0:Graph:/home/cyxy/files/access/cdata/version/v74/test_data/defect_root/source/tcas.gcno
+        -:    0:Data:/home/cyxy/files/access/cdata/version/v74/test_data/defect_root/source/tcas.gcda
+        -:    0:Runs:2
+        -:    1:#include<stdio.h>
+        2:    2:int main(int argc, char *argv[])
+        -:    3:{
+        2:    4:	int a[5],sum=0;
+        -:    5:	int i,j;
+       12:    6:	for(i=0;i<5;i++)
+        -:    7:	{
+       10:    8:		scanf("%d",&a[i]);
+       10:    9:		sum+=a[i];
+        -:   10:	}
+        2:   11:	int avg=sum/5;
+        2:   12:	if(sum==avg*5&&sum!=0)
+    #####:   13:		printf("%d",avg);
+        -:   14:	else
+        2:   15:		printf("-1");
+        2:   16:return 0;
+        -:   17:}
