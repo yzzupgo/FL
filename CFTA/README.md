@@ -28,7 +28,7 @@ For such type of complex fault, developers can completely fix it only when they 
 
 It represents that there are multiple faults on a single line with a certain fault relevance.
 
-As can be seen in Table III, the faults only occur on line 4 where the statement should be ```if(y < z)```. Multiple faults are ```<=``` and ```z - 1``` respectively. When the first fault exits alone, the $t_1$, $t_2$, $t_3$, $t_5$ and $t_6$ are failed test cases; When the second fault exits alone, the $t_2$ and $t_5$ are failed test cases. However, when the multiple faults exit together, the $t_1$, $t_3$ and $t_6$ are failed test cases while $t_2$ and $t_5$ change into passed test cases. Therefore, the multiple faults are related and test cases can't distinguish them.
+As can be seen in Table III, the faults only occur on line 4 where the statement should be ```if(y < z)```. Multiple faults are ```>=``` and ```z - 1``` respectively. When the first fault exits alone, the $t_1$, $t_2$, $t_3$, $t_5$ and $t_6$ are failed test cases; When the second fault exits alone, the $t_2$ and $t_5$ are failed test cases. However, when the multiple faults exit together, the $t_1$, $t_3$ and $t_6$ are failed test cases while $t_2$ and $t_5$ change into passed test cases. Therefore, the multiple faults are related and test cases can't distinguish them.
 
 For such type of complex fault, failed test cases can't distinguish multiple simple faults as the faults occur on a single line. Furthermore, the faults seem to be caused by the same cause from their performance. To fix such type of complex fault, we can apply HOM on a single line, i.e., mutating the faulty statement multiple times.
 
