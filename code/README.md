@@ -13,3 +13,13 @@ The `data_codeflaws.py` and `util.py` files contain the code for the fundamental
 
 * This tool passed experiment on the "Ubuntu Linux Intel i5 Xeon e7-480".
 * python version : 3.6.8
+Calculate suspicion clacSusNew.py
+
+Calculate gradient ranking clacRank.py
+
+Calculate true ranking: clacAlITypeRank.py
+
+Calculate topn: clacCorrectTopn.py
+
+Integrate topn of all projects: clacAllTop-n.py
+
