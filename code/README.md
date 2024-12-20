@@ -9,7 +9,7 @@ Within this open-source project, we offer essential resources for experimentatio
 - **Data Folder**: Contains the necessary data files for conducting experiments.
 - **categories Folder**:Contains the results of the classification of faults
 - **Code Folder**: Includes the source code implementing our strategy.
-- **HOMs Folder**: Contains code for generating higher-order mutants.
+- **HOMs Folder**: Contains code for generating high-order mutants.
 - **baseline Folder**: Contains code to implement the baseline.
 These resources are made available to facilitate reference and reproducibility of the experimental process. Developers can clone the repository to access the code and data required for utilizing our methods in fault localization experiments.
 
