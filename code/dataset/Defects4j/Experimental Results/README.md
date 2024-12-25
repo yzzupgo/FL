@@ -27,7 +27,8 @@ result_merge_all records the experimental results of the combination of the thre
 
 mutations information stored in MajorJUleInfo,faultLine and MaxMajorKillJuzhen, detailed information of the mutation, format
 
-"source-org-jfree-chart-renderer-category-AbstractCategoryItemRenderer-79-1": {
+"source-org-jfree-chart-renderer-category-AbstractCategoryItemRenderer-79-1": 
+{
 "index": 1,
 "linenum": 79,
 "typeOp": "STD",
