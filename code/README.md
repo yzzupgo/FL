@@ -28,7 +28,7 @@ The specific execution process is as follows:
   
 - **baseline.py**: Execute the script to get the baseline results.
 
-Execute the above files in sequence to obtain the results.
+In general,, after using the high-order mutant script to generate a high-order mutant, perform mutation testing, obtain mutation execution information, and execute the above script files in sequence to complete a execution process.
 
 ## results
 All our experimental results are saved in the data folder. 
