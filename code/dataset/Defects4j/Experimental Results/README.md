@@ -29,9 +29,9 @@ mutations information stored in MajorJUleInfo,faultLine and MaxMajorKillJuzhen, 
 
 "source-org-jfree-chart-renderer-category-AbstractCategoryItemRenderer-79-1": 
 {
-"index": 1,
-"linenum": 79,
-"typeOp": "STD",
-"mutFilePath": ".../mutantsFile/Chart/1b/1/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java",
-"relativePath": "source/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java"
+- "index": 1,
+- "linenum": 79,
+- "typeOp": "STD",
+- "mutFilePath": ".../mutantsFile/Chart/1b/1/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java",
+- "relativePath": "source/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java"
 }
