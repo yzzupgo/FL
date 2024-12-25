@@ -6,8 +6,8 @@
 ## Provided Resources:
 Within this open-source project, we offer essential resources for experimentation:
 
-- **Data Folder**: Contains the necessary data files for conducting experiments.
-- **categories Folder**:Contains the results of the classification of faults
+- **Data Folder**: Contains the data files needed to perform the experiments and includes a README file that explains in detail what the individual data means.
+- **categories Folder**:This folder contains the results of our classification of the faults in the dataset according to the definition of faults in the paper.
 - **Code Folder**: Includes the source code implementing our strategy.
 - **HOMs Folder**: Includes a script for generating high-order mutants and a high-order mutants dataset generated using this script.
 - **baseline Folder**: Contains code to implement the baseline.
