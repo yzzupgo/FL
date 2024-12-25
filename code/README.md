@@ -15,7 +15,7 @@ These resources are made available to facilitate reference and reproducibility o
 
 The specific execution process is as follows:
 ## Code Files
-
+In general,after using the high-order mutant script to generate a high-order mutant, perform mutation testing, obtain mutation execution information, and execute the above script files in sequence to complete a execution process.
 - **clacNew.py**: This code reads the original test, mutant execution results and some auxiliary information, calculates and sorts the suspicion of each row (or mutant) under multiple spectral methods (such as Ochiai, Dstar, Jaccard, etc.), and then outputs the results to a CSV file, thus realizing the function of calculating the suspicion of different mutants in the project.
 
 - **clacRank.py**: It reads the error line information from the file obtained in the previous step and converts this information into the format required for internal processing. Then, the code traverses the specified project version range, and for each version, reads the suspicion data stored in the CSV file according to various suspicion evaluation formulas (such as Dstar, Ochiai, etc.). Next, it calculates the suspicion ranking of each line of code and formats these rankings and other related information into JSON files and saves them in a specific directory structure.
