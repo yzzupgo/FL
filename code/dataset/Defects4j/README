@@ -1,0 +1,6 @@
+## Defects4J Dataset
+
+Defects4J is a public software defect dataset that integrates confirmed bugs and fixes from multiple Java projects. 
+This dataset is designed for software testing, debugging research, and the development of automated tools, providing a reusable and accessible platform for research in test generation, defect detection, and automatic repair. 
+  Defects4J supports researchers and developers in exploring and validating software engineering tools and methods. 
+  For detailed information on the original programs and test data and to download the dataset, please visit  [Defects4J GitHub](https://github.com/rjust/defects4j)
