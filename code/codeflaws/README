@@ -1,7 +1,7 @@
 ## CODEFLOWs Dataset
 
-[CODEFLOWs](https://github.com/your-username/codeflows-repository) is a comprehensive dataset focused on capturing and analyzing code execution flows and method call relationships. Designed to support research in control flow and data flow analysis, this dataset is crucial for software testing, code optimization, and security analysis. By providing detailed method call sequences and execution paths, CODEFLOWs enables researchers and developers to deeply understand the dynamic behaviors of code and develop more efficient program analysis and debugging tools.
+Codeflaws is a publicly available defect dataset specifically designed for the study of faults in competitive programming. It contains hundreds of C programs collected from various online programming platforms, featuring representative logical and implementation errors. Codeflaws offers an ideal environment for researching and developing automated detection and repair tools targeted at programming errors.
 
-The dataset features rich execution trace information that aids in identifying and analyzing complex behavior patterns in software, including potential performance bottlenecks and security vulnerabilities. It is suitable for developing advanced program analysis techniques such as dynamic slicing, mutation testing, and model-based testing.
+This dataset includes not only the faulty versions of programs but also their corrected versions, enabling researchers to perform precise evaluations and testing of automated tools. The design of Codeflaws supports a broad range of software engineering research, including fault localization, automatic program repair, program understanding, and test case generation.
 
-For more detailed information and to access the CODEFLOWs dataset, please visit [CODEFLOWs GitHub](https://github.com/your-username/codeflows-repository).
+For more information and to download the dataset, please visit the Codeflaws Official Website: http://codeflaws.comp.nus.edu.sg/.
