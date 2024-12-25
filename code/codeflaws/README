@@ -4,4 +4,4 @@ Codeflaws is a publicly available defect dataset specifically designed for the s
 
 This dataset includes not only the faulty versions of programs but also their corrected versions, enabling researchers to perform precise evaluations and testing of automated tools. The design of Codeflaws supports a broad range of software engineering research, including fault localization, automatic program repair, program understanding, and test case generation.
 
-For more information and to download the dataset, please visit the Codeflaws Official Website: http://codeflaws.comp.nus.edu.sg/.
+For detailed information on the original programs and test data and to download the dataset, please visit the Codeflaws Official Website: http://codeflaws.comp.nus.edu.sg/.
