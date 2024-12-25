@@ -1,7 +1,7 @@
 
 #### Remarks：
-* This tool passed experiment on the "Ubuntu Linux Intel i5 Xeon e7-480".
-* python version : 3.6.8
+* This tool passed experiment on the "Ubuntu Linux 20.04.3 LTS (Focal Fossa".
+* python version : 3.7.0
 
 ## Provided Resources:
 Within this open-source project, we offer essential resources for experimentation:
