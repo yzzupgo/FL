@@ -1,0 +1,80 @@
+        -:    0:Source:/home/cyxy/files/access/cdata/version/v496/test_data/defect_root/source/tcas.c
+        -:    0:Graph:/home/cyxy/files/access/cdata/version/v496/test_data/defect_root/source/tcas.gcno
+        -:    0:Data:/home/cyxy/files/access/cdata/version/v496/test_data/defect_root/source/tcas.gcda
+        -:    0:Runs:9
+        -:    1:#include <inttypes.h>
+        -:    2:#include <stdio.h>
+        -:    3:#define MAXN 4
+        -:    4:#define LL int64_t
+        -:    5:
+        -:    6:LL AN[MAXN] = {0};
+        -:    7:
+     1296:    8:LL calc3(LL a, LL b, char opt) {
+     1296:    9:    if (opt == '+')
+    #####:   10:        return a+b;
+        -:   11:    else
+     1296:   12:        return a*b;
+        -:   13:}
+        -:   14:
+        9:   15:LL calc2(LL arr[], char opt[]) {
+        -:   16:    int a, b, c, d;
+        9:   17:    LL min = 0x3f3f3f3f3f3f3f3f;
+       45:   18:    for (a=0; a<4; a++)
+      180:   19:        for (b=0; b<4; b++)
+      720:   20:            for (c=0; c<4; c++)
+     2880:   21:                for (d=0; d<4; d++) {
+     2304:   22:                    if (a!=b && a!=c && a!=d && b!=c && b!=d && c!=d) {
+        -:   23:                        LL t1, t2;
+      216:   24:                        t1 = calc3(arr[a], arr[b], opt[0]);
+      216:   25:                        t1 = calc3(t1, arr[c], opt[1]);
+      216:   26:                        t1 = calc3(t1, arr[d], opt[2]);
+        -:   27:                        //printf("%" PRId64 " %c %" PRId64 " %c %" PRId64 " %c %" PRId64 "\n", arr[a], opt[0], arr[b], opt[1], arr[c], opt[2], arr[d]);
+      216:   28:                        if (t1<min)
+        9:   29:                            min = t1;
+        -:   30:
+      216:   31:                        t1 = calc3(arr[a], arr[b], opt[0]);
+      216:   32:                        t2 = calc3(arr[c], arr[d], opt[1]);
+      216:   33:                        t1 = calc3(t1, t2, opt[2]);
+        -:   34:                        //printf("%" PRId64 " %c %" PRId64 " %c %" PRId64 " %c %" PRId64 "\n", arr[a], opt[0], arr[b], opt[1], arr[c], opt[2], arr[d]);
+      216:   35:                        if (t1<min)
+    #####:   36:                            min = t1;
+        -:   37:                    }
+        -:   38:                }
+        9:   39:    return min;
+        -:   40:}
+        -:   41:
+        -:   42:
+        9:   43:int main(int argc, char *argv[]) {
+        -:   44:    int i;
+        -:   45:    char opt[3];
+        -:   46:
+        -:   47://#ifndef ONLINE_JUDGE
+        -:   48://    freopen("in2.txt", "r", stdin);
+        -:   49://    freopen("out2.txt", "w", stdout);
+        -:   50://#endif
+        -:   51:    
+       18:   52:    while (scanf("%" PRId64 "%" PRId64 "%" PRId64 "%" PRId64 "", &AN[0], &AN[1], &AN[2], &AN[3] )!=EOF) {
+        9:   53:        int add=0, mul=0, k=1, n=4;
+        -:   54:        //char op;
+        9:   55:        LL *TEMP=AN, ans;
+        -:   56:
+       36:   57:        for (i=0; i<3; i++) {
+       27:   58:            getchar();
+       27:   59:            scanf("%c", &opt[i]);
+        -:   60:            /*select_sort(TEMP, n);
+        -:   61:            if (op=='+') {
+        -:   62:                TEMP[n-2] += TEMP[n-1];
+        -:   63:                n--;
+        -:   64:            } else if (op=='*') {
+        -:   65:                TEMP[1] *= TEMP[0];
+        -:   66:                TEMP++;
+        -:   67:                n--;
+        -:   68:            }*/
+        -:   69:        }
+        -:   70:
+        9:   71:        ans = calc2(AN, opt);
+        -:   72:
+        9:   73:        printf("%" PRId64 "\n", ans);
+        -:   74:    }
+        9:   75:    return 0;
+        -:   76:}

@@ -1,0 +1,12 @@
+        -:    0:Source:/home/cyxy/files/access/cdata/version/v309/test_data/defect_root/source/tcas.c
+        -:    0:Graph:/home/cyxy/files/access/cdata/version/v309/test_data/defect_root/source/tcas.gcno
+        -:    0:Data:/home/cyxy/files/access/cdata/version/v309/test_data/defect_root/source/tcas.gcda
+        -:    0:Runs:14
+        -:    1:#include<stdio.h>
+       14:    2:int main(int argc, char *argv[])
+        -:    3:{
+        -:    4:	int gl,gr,bl,br,i,j,k,l;
+       14:    5:	scanf("%d %d\n%d %d",&gl,&gr,&bl,&br);
+      14*:    6:	printf((gl!=0)&&(br!=0)&&(br>=gl-1)&&(br<=2*gl+2)?"YES":((gr!=0)&&(bl!=0)&&(bl>=gr-1)&&(bl<=2*gr+2)?"YES":"NO"));
+       14:    7:	return 0;
+        -:    8:}

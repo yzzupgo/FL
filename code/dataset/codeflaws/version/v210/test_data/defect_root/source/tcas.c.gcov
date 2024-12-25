@@ -1,0 +1,37 @@
+        -:    0:Source:/home/cyxy/files/access/cdata/version/v210/test_data/defect_root/source/tcas.c
+        -:    0:Graph:/home/cyxy/files/access/cdata/version/v210/test_data/defect_root/source/tcas.gcno
+        -:    0:Data:/home/cyxy/files/access/cdata/version/v210/test_data/defect_root/source/tcas.gcda
+        -:    0:Runs:9
+        -:    1:#include<stdio.h>
+        9:    2:int main(int argc, char *argv[])
+        -:    3:{
+        9:    4:    int n,i,a[30],sum1=0,sum2=0,sum3=0,k=0;
+        9:    5:    scanf("%d",&n);
+       83:    6:    for(i=0;i<n;i++)
+        -:    7:        {
+       74:    8:            scanf("%d",&a[i]);
+        -:    9:        }
+       35:   10:    for(i=0;i<n;i=i+3)
+        -:   11:    {
+       26:   12:        sum1=sum1+a[i];
+        -:   13:    }
+        -:   14:
+       34:   15:    for(i=1;i<n;i=i+3)
+        -:   16:    {
+       25:   17:        sum2=sum2+a[i];
+        -:   18:    }
+        -:   19:
+        -:   20:
+       32:   21:    for(i=2;i<n;i=i+3)
+        -:   22:    {
+       23:   23:        sum3=sum3+a[i];
+        -:   24:    }
+        9:   25:    if(sum1>sum2&&sum1>sum3)
+    #####:   26:        printf("chest");
+       9*:   27:        if(sum2>sum1&&sum2>sum3)
+    #####:   28:        printf("biceps");
+        9:   29:        if(sum3>sum1&&sum3>sum2)
+        9:   30:        printf("back");
+        -:   31:
+        9:   32:return 0;
+        -:   33:}

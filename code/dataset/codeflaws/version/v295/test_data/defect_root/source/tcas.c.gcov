@@ -1,0 +1,245 @@
+        -:    0:Source:/home/cyxy/files/access/cdata/version/v295/test_data/defect_root/source/tcas.c
+        -:    0:Graph:/home/cyxy/files/access/cdata/version/v295/test_data/defect_root/source/tcas.gcno
+        -:    0:Data:/home/cyxy/files/access/cdata/version/v295/test_data/defect_root/source/tcas.gcda
+        -:    0:Runs:4
+        -:    1:/* B. Ancient Prophesy */
+        -:    2:/* time limit per test */
+        -:    3:/* 2 seconds */
+        -:    4:/* memory limit per test */
+        -:    5:/* 256 megabytes */
+        -:    6:/* input */
+        -:    7:/* standard input */
+        -:    8:/* output */
+        -:    9:/* standard output */
+        -:   10:
+        -:   11:/* A recently found Ancient Prophesy is believed to contain the exact Apocalypse date. The prophesy is a string that only consists of digits and characters "-". */
+        -:   12:
+        -:   13:/* We'll say that some date is mentioned in the Prophesy if there is a substring in the Prophesy that is the date's record in the format "dd-mm-yyyy". We'll say that the number of the date's occurrences is the number of such substrings in the Prophesy. For example, the Prophesy "0012-10-2012-10-2012" mentions date 12-10-2012 twice (first time as "0012-10-2012-10-2012", second time as "0012-10-2012-10-2012"). */
+        -:   14:
+        -:   15:/* The date of the Apocalypse is such correct date that the number of times it is mentioned in the Prophesy is strictly larger than that of any other correct date. */
+        -:   16:
+        -:   17:/* A date is correct if the year lies in the range from 2013 to 2015, the month is from 1 to 12, and the number of the day is strictly more than a zero and doesn't exceed the number of days in the current month. Note that a date is written in the format "dd-mm-yyyy", that means that leading zeroes may be added to the numbers of the months or days if needed. In other words, date "1-1-2013" isn't recorded in the format "dd-mm-yyyy", and date "01-01-2013" is recorded in it. */
+        -:   18:
+        -:   19:/* Notice, that any year between 2013 and 2015 is not a leap year. */
+        -:   20:/* Input */
+        -:   21:
+        -:   22:/* The first line contains the Prophesy: a non-empty string that only consists of digits and characters "-". The length of the Prophesy doesn't exceed 10^5 characters. */
+        -:   23:/* Output */
+        -:   24:
+        -:   25:/* In a single line print the date of the Apocalypse. It is guaranteed that such date exists and is unique. */
+        -:   26:/* Sample test(s) */
+        -:   27:/* Input */
+        -:   28:
+        -:   29:/* 777-444---21-12-2013-12-2013-12-2013---444-777 */
+        -:   30:
+        -:   31:/* Output */
+        -:   32:
+        -:   33:/* 13-12-2013 */
+        -:   34:
+        -:   35:
+        -:   36:#include<stdio.h>
+        -:   37:#include<stdlib.h>
+        -:   38:#include<string.h>
+        -:   39:
+        -:   40:
+      284:   41:int is_dig(char s)
+        -:   42:{
+      284:   43:  return (s >= '0' &&s <= '9') ? 1 : 0;
+        -:   44:}
+        -:   45:
+        -:   46:
+    #####:   47:int is_hyph(char s)
+        -:   48:{
+    #####:   49:  return (s == '-') ? 1 : 0;
+        -:   50:}
+        -:   51:
+        -:   52:
+      160:   53:int stoi (char s)
+        -:   54:{
+      160:   55:  return s - '0';
+        -:   56:}
+        -:   57:
+        -:   58:
+       64:   59:int stoi_dd_mm(char *s)
+        -:   60:{
+       64:   61:  return (stoi(s[0])*10)+stoi(s[1]);
+        -:   62:}
+        -:   63:
+        -:   64:
+        8:   65:int stoi_yyyy(char *s)
+        -:   66:{
+        8:   67:  return stoi(s[0])*1000 + stoi(s[1])*100 + stoi(s[2])*10 +stoi(s[3]);
+        -:   68:}
+        -:   69:
+        -:   70:
+       26:   71:int last_day(int month)
+        -:   72:{
+       26:   73:  switch (month)
+        -:   74:    {
+    #####:   75:    case 1: return 31; break;
+       11:   76:    case 2: return 28; break;
+    #####:   77:    case 3: return 31; break;
+    #####:   78:    case 4: return 30; break;
+    #####:   79:    case 5: return 31; break;
+    #####:   80:    case 6: return 30; break;
+    #####:   81:    case 7: return 31; break;
+    #####:   82:    case 8: return 31; break;
+    #####:   83:    case 9: return 30; break;
+    #####:   84:    case 10: return 31; break;
+    #####:   85:    case 11: return 30; break;
+        1:   86:    case 12: return 31; break;
+       14:   87:    default: return -1; break;
+        -:   88:    }
+        -:   89:}
+        -:   90:
+        -:   91:
+      122:   92:int check_format(char *s, int i)
+        -:   93:{
+        -:   94:  char dd[2], mm[2], yyyy[4];
+      122:   95:  int temp_i = i, j=0;
+        -:   96:  // printf("Check format starts... i = %d\n", i);
+      274:   97:  for (; i < temp_i + 2; i++)
+        -:   98:    {
+      214:   99:      if (is_dig(s[i]) != 1)
+       62:  100:	return -1;
+      152:  101:      dd[j] = s[i];
+      152:  102:      j++;
+        -:  103:      //printf("dd[i] = %c\n", dd[i]);
+        -:  104:      //printf("1 passed\n");
+        -:  105:    }
+        -:  106:  
+       60:  107:  if (s[temp_i+2] != '-')
+       32:  108:    return -1;
+        -:  109:  //printf("2 passed\n");
+       80:  110:  for (i = temp_i+3, j = 0; i < temp_i+5; i++)
+        -:  111:    {
+       54:  112:      if (is_dig(s[i]) != 1)
+        2:  113:	return -1;
+       52:  114:      mm[j] = s[i];
+        -:  115:      //printf("mm[j] = %c\n", mm[j]);
+       52:  116:      ++j;
+        -:  117:    }
+        -:  118:  //printf("3 passed\n");
+        -:  119:  /* printf("dd = %d  mm = %d last day = %d\n", stoi_dd_mm(dd), stoi_dd_mm(mm),  last_day(stoi_dd_mm(mm))); */
+        -:  120:  /* printf("%d + %d\n", stoi(dd[0]), stoi(dd[1])); */
+       26:  121:  if (stoi_dd_mm(dd) > last_day(stoi_dd_mm(mm)) || stoi_dd_mm(dd) < 1)
+       22:  122:    return -1;
+        -:  123:  //printf("4 passed\n");
+        4:  124:  if (s[temp_i+5] != '-')
+    #####:  125:    return -1;
+        -:  126:  //printf("6 passed\n");
+       20:  127:  for (i = temp_i+6, j = 0; i < temp_i+10; i++)
+        -:  128:    {
+       16:  129:      if (is_dig(s[i]) != 1)
+    #####:  130:	return -1;
+       16:  131:      yyyy[j] = s[i];
+       16:  132:      ++j;
+        -:  133:    }
+        -:  134:  //printf("7 passed\n");
+        4:  135:  if (stoi_yyyy(yyyy) >= 2013 && stoi_yyyy(yyyy) <= 2015 && stoi_dd_mm(mm) >= 1 && stoi_dd_mm(mm) <= 12)
+        4:  136:    return 1;
+    #####:  137:  else return -1;
+        -:  138:}
+        -:  139:
+    #####:  140:static int cmp (const void *s1, const void * s2)
+        -:  141:{
+    #####:  142:  return strcmp(* (char * const *)s1, *(char * const *)s2);
+        -:  143:}
+        -:  144:
+        4:  145:void switch_to_yyyymmdd(char **records, int len)
+        -:  146:{
+        -:  147:  int i, j;
+        -:  148:  char tmp[11], rev_tmp[11];
+        8:  149:  for (i = 0; i < len; i++)
+        -:  150:    {
+        4:  151:      strcpy(tmp,records[i]);
+       20:  152:      for (j =  0; j < 4; j++)
+       16:  153:	rev_tmp[j] = tmp[6+j];
+        4:  154:      rev_tmp[4] = '-';
+       12:  155:      for (j = 5; j < 7; j++)
+        8:  156:	rev_tmp[j] = tmp[j-2];
+        4:  157:      rev_tmp[7] = '-';
+       12:  158:      for (j = 8; j < 10; j++)
+        8:  159:	rev_tmp[j] = tmp[j - 8];
+        4:  160:      rev_tmp[10] = '\0';
+        4:  161:      strcpy(records[i],rev_tmp);
+        -:  162:    }
+        4:  163:}
+        -:  164:
+        4:  165:char * max(char **records, int l)
+        -:  166:{
+        4:  167:  int i, cnt = 0, max = 0, max_indx = 0;
+        -:  168:  char tmp[11];
+        4:  169:  strcpy(tmp, records[0]);
+        8:  170:  for (i = 0; i < l; i++)
+        -:  171:    {
+        4:  172:      if(strcmp(tmp, records[i])==0)
+        -:  173:	{
+        4:  174:	  cnt++;
+        -:  175:	  // max = cnt;
+        -:  176:	}
+        -:  177:      else
+        -:  178:	{
+    #####:  179:	  if (max < cnt)
+        -:  180:	    {
+    #####:  181:	      max = cnt;
+    #####:  182:	      max_indx = i - 1;
+        -:  183:	    }
+    #####:  184:	  strcpy(tmp, records[i]);
+    #####:  185:	  cnt = 1;
+        -:  186:	}
+        -:  187:      
+        -:  188:    }
+        4:  189:  if (max < cnt)
+        4:  190:    max_indx = i - 1;
+        4:  191:  return records[max_indx];
+        -:  192: 
+        -:  193:}
+        -:  194:
+        -:  195:
+        4:  196:void switch_to_ddmmyyyy(char **records, int len)
+        -:  197:{
+        -:  198:  int i, j;
+        -:  199:  char tmp[11], rev_tmp[11];
+        8:  200:  for (i = 0; i < len; i++)
+        -:  201:    {
+        4:  202:      strcpy(tmp,records[i]);
+       12:  203:      for (j =  0; j < 2; j++)
+        8:  204:	rev_tmp[j] = tmp[8+j];
+        4:  205:      rev_tmp[2] = '-';
+       12:  206:      for (j = 3; j < 5; j++)
+        8:  207:	rev_tmp[j] = tmp[j+2];
+        4:  208:      rev_tmp[5] = '-';
+       20:  209:      for (j = 6; j < 10; j++)
+       16:  210:	rev_tmp[j] = tmp[j - 6];
+        4:  211:      rev_tmp[10] = '\0';
+        4:  212:      strcpy(records[i],rev_tmp);
+        -:  213:    }
+        4:  214:}
+        -:  215:
+        4:  216:int main(int argc, char *argv[])
+        -:  217:{
+        -:  218:  char string[100001];
+        -:  219:  char tmp[11];
+        4:  220:  scanf("%s", string);
+        4:  221:  char **records = malloc(10000*sizeof(*records));
+        4:  222:  int i, j = 0, k = -1;
+      126:  223:  for (i = 0; string[i] != '\0'; i++)
+        -:  224:    {
+      122:  225:      if (check_format(string, i) == 1)
+        -:  226:	{
+        4:  227:	  k++;
+       44:  228:	  for (j = 0; j < 10; j++)
+       40:  229:	    tmp[j] = string[i + j];
+        4:  230:	  tmp[10] = '\0';
+        4:  231:	  records[k] = malloc(11*sizeof(char));
+        4:  232:	  strcpy(records[k], tmp);
+        -:  233:	}
+        -:  234:    }  
+        4:  235:  int l = k+1;
+        4:  236:  switch_to_yyyymmdd(records, l);
+        4:  237:  qsort((char**)records, l, sizeof(records[0]), cmp);  
+        4:  238:  switch_to_ddmmyyyy(records, l);
+        4:  239:  printf("%s\n", max(records, l));
+        4:  240:  return 0;
+        -:  241:}

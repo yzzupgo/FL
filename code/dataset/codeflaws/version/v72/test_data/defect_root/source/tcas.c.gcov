@@ -1,0 +1,33 @@
+        -:    0:Source:/home/cyxy/files/access/cdata/version/v72/test_data/defect_root/source/tcas.c
+        -:    0:Graph:/home/cyxy/files/access/cdata/version/v72/test_data/defect_root/source/tcas.gcno
+        -:    0:Data:/home/cyxy/files/access/cdata/version/v72/test_data/defect_root/source/tcas.gcda
+        -:    0:Runs:14
+        -:    1:#include <stdio.h>
+        -:    2:#define max_n 100
+        -:    3:
+       14:    4:int main(int argc, char *argv[])
+        -:    5:
+        -:    6:{
+        -:    7:    int a[max_n]; int kolpal[max_n+1]; int i; int kol; int N;
+       14:    8:    scanf("%d", &N);
+       14:    9:    kol = 0;
+        -:   10:
+     1414:   11:    for(i = 1; i < max_n+1; ++i)
+     1400:   12:        kolpal[i] = 0;
+        -:   13:
+        -:   14:
+      169:   15:    for (i = 0; i < N; ++i)
+        -:   16:        {
+      155:   17:            scanf("%d", &a[i]);
+      155:   18:            kolpal[a[i]] += 1; 
+        -:   19:        }
+        -:   20:
+     1414:   21:    for (i = 1; i < max_n+1; ++i)
+     1400:   22:        kol += kolpal[i] / 2;
+        -:   23:
+        -:   24:
+       14:   25:    printf("%d", kol/2);
+        -:   26:
+       14:   27:    return 0;
+        -:   28:}
+        -:   29:

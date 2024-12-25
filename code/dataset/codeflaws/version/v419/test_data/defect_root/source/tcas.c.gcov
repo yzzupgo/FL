@@ -1,0 +1,70 @@
+        -:    0:Source:/home/cyxy/files/access/cdata/version/v419/test_data/defect_root/source/tcas.c
+        -:    0:Graph:/home/cyxy/files/access/cdata/version/v419/test_data/defect_root/source/tcas.gcno
+        -:    0:Data:/home/cyxy/files/access/cdata/version/v419/test_data/defect_root/source/tcas.gcda
+        -:    0:Runs:10
+        -:    1:#include<stdio.h>
+        -:    2:#include<stdio.h>
+        -:    3:#include<string.h>
+       10:    4:int main(int argc, char *argv[])
+        -:    5:{
+       10:    6:char *a[28]={"zero","one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen","twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"};
+       10:    7:int b,c[28]={0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,30,40,50,60,70,80,90},i,x,y;
+       10:    8:scanf("%d",&b);
+       10:    9:if((b>=0&&b<=20)||((b==30)||(b==40)||(b==50)||(b==60)||(b==70)||(b==80)||(b==90)))
+        -:   10:{
+    #####:   11:for(i=0;i<28;i++)
+        -:   12:{
+    #####:   13:if(b==c[i])
+    #####:   14:printf("%s",a[i]);
+        -:   15:}
+        -:   16:}
+       10:   17:else if(b>=21&&b<=29)
+        -:   18:{
+       10:   19:x=b%10;
+       10:   20:y=20;
+       10:   21:printf("%s-%s",a[y],a[x]);
+        -:   22:}
+    #####:   23:else if(b>=31&&b<=39)
+        -:   24:{
+    #####:   25:x=b%10;
+    #####:   26:y=21;
+    #####:   27:printf("%s-%s",a[y],a[x]);
+        -:   28:}
+    #####:   29:else if(b>=41&&b<=49)
+        -:   30:{
+    #####:   31:x=b%10;
+    #####:   32:y=22;
+    #####:   33:printf("%s-%s",a[y],a[x]);
+        -:   34:}
+    #####:   35:else if(b>=51&&b<=59)
+        -:   36:{
+    #####:   37:x=b%10;
+    #####:   38:y=23;
+    #####:   39:printf("%s-%s",a[y],a[x]);
+        -:   40:}
+    #####:   41:else if(b>=61&&b<=69)
+        -:   42:{
+    #####:   43:x=b%10;
+    #####:   44:y=24;
+    #####:   45:printf("%s-%s",a[y],a[x]);
+        -:   46:}
+    #####:   47:else if(b>=71&&b<=79)
+        -:   48:{
+    #####:   49:x=b%10;
+    #####:   50:y=25;
+    #####:   51:printf("%s-%s",a[y],a[x]);
+        -:   52:}
+    #####:   53:else if(b>=81&&b<=89)
+        -:   54:{
+    #####:   55:x=b%10;
+    #####:   56:y=26;
+    #####:   57:printf("%s-%s",a[y],a[x]);
+        -:   58:}
+    #####:   59:else if(b>=91&&b<=99)
+        -:   60:{
+    #####:   61:x=b%10;
+    #####:   62:y=27;
+    #####:   63:printf("%s-%s",a[y],a[x]);
+        -:   64:}
+       10:   65:return 0;
+        -:   66:}

@@ -1,0 +1,47 @@
+        -:    0:Source:E:/Prgorams/Python/access/cdata/version/v1/test_data/defect_root/source/tcas.c
+        -:    0:Graph:tcas.gcno
+        -:    0:Data:tcas.gcda
+        -:    0:Runs:4
+        -:    1:#include <stdio.h>
+        -:    2:#include <stdlib.h>
+        -:    3:#include<string.h>
+        4:    4:int main(int argc, char *argv[])
+        -:    5:{
+        -:    6:    char a[1005],b[1005];
+        4:    7:    int ans=0,s=0,j,l,i,k=0,z;
+        4:    8:    gets (a);
+        4:    9:    l=strlen(a);
+        4:   10:    if (a[1]=='}')
+        -:   11:    {
+        3:   12:        printf("0");
+        3:   13:        return 0;
+        -:   14:        ans=1;
+        -:   15:    }
+        1:   16:    if (ans==0)
+        -:   17:    {
+        1:   18:        ans=1;
+        1:   19:        b[0]=a[1];
+        1:   20:        s=1;
+      171:   21:    for (i=4;i<l;i=i+3)
+        -:   22:    {
+      170:   23:        b[s]=a[i];
+      170:   24:        s++;
+     2330:   25:        for (j=0;j<s-1;j++)
+        -:   26:        {
+     2305:   27:            if (a[i]==b[j])
+        -:   28:            {
+      145:   29:                z=0;
+      145:   30:                break;
+        -:   31:            }
+        -:   32:            else
+        -:   33:                {
+     2160:   34:                    z=1;
+        -:   35:                }
+        -:   36:        }
+      170:   37:        if (z==1)
+       25:   38:            ans++;
+        -:   39:    }
+        -:   40:    }
+        1:   41:    printf("%d",ans);
+        1:   42:    return 0;
+        -:   43:}

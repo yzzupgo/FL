@@ -1,0 +1,20 @@
+        -:    0:Source:/home/cyxy/files/access/cdata/version/v197/test_data/defect_root/source/tcas.c
+        -:    0:Graph:/home/cyxy/files/access/cdata/version/v197/test_data/defect_root/source/tcas.gcno
+        -:    0:Data:/home/cyxy/files/access/cdata/version/v197/test_data/defect_root/source/tcas.gcda
+        -:    0:Runs:10
+        -:    1:#include <stdio.h>
+        -:    2:#include <stdlib.h>
+        -:    3:
+       10:    4:int main(int argc, char *argv[])
+        -:    5:{
+       10:    6:    long n; scanf("%ld", &n);
+       10:    7:    int x, y, a = -1, b = -1, temp = 1, max = 1;
+   314443:    8:    while (n--){
+   314433:    9:        scanf("%d %d", &x, &y);
+   314433:   10:        if ((a == x) && (b == y)) temp++;
+       11:   11:        else {a = x; b = y; temp = 1;}
+   314433:   12:        if (temp > max) max = temp;
+        -:   13:    }
+       10:   14:    printf("%d\n", max);
+       10:   15:    return 0;
+        -:   16:}
